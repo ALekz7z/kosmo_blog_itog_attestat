@@ -1,0 +1,47 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://kit.fontawesome.com/33891b67fe.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/logo.jpg' %}" alt="лого">
+        <span class="logo">Земля в иллюминаторе</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fa-solid fa-place-of-worship"></i>  Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="fa-solid fa-user-astronaut"></i>  Обо мне</li></a>
+            <a href="{% url 'lenta_home' %}"><li><i class="fa-solid fa-book"></i>  Новости</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить</button></li></a>
+        </ul>
+        <style>
+            a {
+            text-decoration: none;
+            }
+          </style>
+    </aside>
+    <main>
+        <div>
+            <a class="btn btn-success m-2" href="/registration">
+                Регистрация
+            </a>
+            <a class="btn btn-success m-2" href="/login">
+                Вход
+            </a>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

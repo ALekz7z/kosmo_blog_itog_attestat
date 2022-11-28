@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+
+{{ title }}
+    
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Добро пожаловать на борт!</p>
+        <p>Здесь мы разбираемся в строении космический кораблей, а теъак же познаем тайны космоса, и конечно же веселимся)</p>
+        <a href="{% url 'lenta_home' %}"><button class="btn btn-warning">Перейти к новостям</button></a>
+    </div>
+
+{% endblock %}
+
+
+

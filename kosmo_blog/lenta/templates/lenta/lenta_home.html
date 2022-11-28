@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+
+Новости
+    
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="features">
+        <h1>Последние новости</h1>
+        
+        {% for el in lenta %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anons }}</p>
+                <a href="{% url 'new_detail' el.id %}" class="btn btn-warning">Полная статья тут</a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
